@@ -1,0 +1,483 @@
+/* create by raindrops on 2017/5/2 18:13  */
+
+/* ==========
+   常量
+============= */
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.bg-e7{
+    background: #e7e7e7;
+}
+.bg-ff{
+    background: #ffffff;
+}
+.bg-f6{
+    background: #f6f6f6;
+}
+.ld-main-bg{
+    background: #f3f5f7;
+}
+.show-more{
+    margin: .5rem 0;
+}
+.show-more a{
+    color: #222;
+    font-size: 1rem;
+}
+/* 覆盖 bootstrap 的一些样式 */
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
+.navbar{
+    margin-bottom: 0;
+}
+/* main.html */
+.navbar-hpu-main{
+    border-radius: 0;
+    background: #fff;
+    border: 0;
+}
+.navbar-border{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav>li>a{
+    color: #222;
+}
+
+/* 重新定义bootstrap导航条属性 */
+@media (min-width: 768px){
+    .navbar-brand, .navbar-nav>li>a {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        color: #222;
+    }
+    .navbar-hpu-main .navbar-form {
+        margin-left: 0%;
+    }
+}
+.navbar-default .navbar-nav>li>a {
+    color: #222;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #e90500;
+    background-color: #fff;
+}
+.navbar-hpu-main .disabled{
+    padding-left:0;
+    padding-right: 0;
+}
+@media (max-width: 768px){
+    .navbar-hpu-main .disabled{
+        display: none;
+    }
+    .navbar-hpu-main .navbar-form .form-group{
+        display: none;
+    }
+}
+.navbar-hpu-main .navbar-toggle .icon-bar{
+    background: #000;
+}
+.navbar-hpu-main .navbar-form{
+    margin-top: 1rem;
+}
+.navbar-hpu-main .form-search{
+    border: none;
+    border-bottom: 1px solid #666666;
+    text-indent: 1rem;
+    outline:none;
+}
+.navbar-hpu-main .btn-search{
+    border: none;
+    position: relative;
+    top: .5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url("../images/icon/search.png") no-repeat center;
+    background-size:cover;
+}
+
+.navbar-hpu-main .index-char{
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+}
+.navbar-hpu-main .index-char img{
+    margin-top: .5rem;
+    width: 100%;
+    height:100%;
+}
+
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+/* banner */
+.home-content{
+    overflow: hidden;
+    background-color: #f6f6f6;
+}
+.home-content .ld-home-banner{
+    min-height: 60rem;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper{
+    position: relative;
+    min-height: inherit;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content{
+    font-family: Conv_Nitti;
+    position:absolute;
+    z-index: 50001;
+    top:40%;
+    margin-top:-15rem;
+    width:100%;
+    height:30rem;
+    text-align: center;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content .left-content{
+    display: inline-block;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content .left-content .left-title{
+    position: absolute;
+    top: 9rem;
+    right: 0;
+    font-size:1.2rem;
+    background: #5B69C3;
+    color:#fafafa;
+    padding: .5rem;
+    margin-right: 4rem;
+    margin-top:0;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content .left-content .role{
+    position: relative;
+    display: block;
+    margin-right: 4rem;
+    margin-top: 12rem;
+    text-align: right;
+    font-size:1.4rem;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content .left-content .left-content-text{
+    margin-top: 0;
+    margin-right: 4rem;
+    font-size: 3rem;
+    color: #fafafa;
+    line-height: 100%;
+    text-align: right;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content .left-content .left-content-text em{
+    font-size: 1rem;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content .right-content{
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 100%;
+    border-left: 1px solid rgba(255,255,255,.2);
+    overflow: hidden;
+}
+.home-content .ld-home-banner .ld-home-banner-wrapper .banner-content .right-content .rightContent{
+    position: absolute;
+    left: -7rem;
+    top: 55%;
+    margin-right: 0;
+    margin-top: -15rem;
+    font-size: 25rem;
+    color: #fafafa;
+    font-family: lato,FZLTXIANH,"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.home-content .ld-home-banner .bannerimg-wrap{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center bottom;
+    transform: translate3d(-50%,0,0);
+    background-position-x: 50%;
+    background-position-y: 100%;
+    height:100%;
+    width:100%;
+    min-height:calc(100vh - 12rem);
+    max-width: 1920px;
+    max-height: 1200px;
+}
+.home-content .ld-home-banner .banner-img{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/banner2.jpg);
+    background-size: cover;
+}
+.home-content .ld-home-banner .join-us{
+    margin-top: 5rem;
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.home-content .ld-home-banner .join-us a{
+    color: #fafafa;
+    border: 1px solid #fafafa;
+    padding: .5rem 1rem;
+}
+.course-wrapper{
+    display: inline-block;
+    padding: 2rem 0;
+    border-bottom: 1px solid #eeeeee;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    box-shadow: 0 1px 1px 0 rgba(7,17,27,.1);
+}
+.course-wrapper .course-wrapper-item+.course-wrapper-item{
+    border-left: 1px solid #eee;
+}
+.course-wrapper .media-body{
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+}
+.course-wrapper .media-body .media-heading{
+    line-height: 2.8rem;
+}
+
+.ld-home-item{
+    margin-top: 10rem;
+}
+.ld-home-item h1{
+    margin-bottom: 2rem;
+}
+.ld-home-item h1 span{
+    display: inline-block;
+    font-size: 1.8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: .5rem;
+    /*border-bottom: 1px solid #DDD;*/
+}
+.class-content-wrap{
+    width: 70%;
+    margin: 0 auto;
+}
+.class-item .caption{
+    padding-bottom: .4rem;
+}
+.class-item .caption h3{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-size: 1.6rem;
+}
+.class-item .caption p{
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+.openSource-item{
+    padding: 0;
+}
+.openSource-item a img{
+    position: relative;
+}
+.openSource-item a{
+    color: #FFF;
+    font-size: 1.8rem;
+}
+.openSource-item .openSource-item-title{
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+}
+.openSource-show{
+    display: block;
+    height: 5rem;
+    line-height: 5rem;
+    background-color: #343434;
+    margin: 0;
+}
+.openSource-show a{
+    color: #FFF;
+}
+.handsome-item .thumbnail{
+    border-radius: 100%;
+}
+.handsome-item .caption h3{
+    padding: 0;
+    margin: .5rem 0;
+    font-size: 1.8rem;
+}
+.handsome-item .caption p{
+    font-size: 1rem;
+}
+.handsome-item .row{
+    width: 50%;
+    margin: 0 auto;
+}
+.home-handsome-wrapper .handsome-show a{
+    display: block;
+    color: #0d2bd7;
+}
+.home-handsome-wrapper .handsome-show{
+    margin-top: 3rem;
+    color: #333333;
+    font-size: 1rem;
+}
+.ld-handsome{
+    background: #f7f7f7;
+    padding-bottom: 10rem;
+}
+
+
+/* 页脚 */
+
+.ld-home-footer {
+    border-top: 1px solid #eeeeee;
+    padding: 3rem 0;
+    background-color: #fafafa;
+}
+.ld-home-footer .footer-wrapper {
+    display: flex;
+    color: #222;
+    font-size: 1.4rem;
+}
+.ld-home-footer .footer-wrapper.foot-right {
+    padding: 5rem 0;
+    width: 100%;
+}
+.ld-home-footer .footer-wrapper.foot-right ul{
+    line-height: 2.2rem;
+}
+.ld-home-footer .footer-wrapper.foot-right p{
+    display: block;
+    text-align: right;
+    font-size:1rem;
+}
+/* end main.html */
+
+
+/* login.html */
+.lc-login{
+    min-height: calc(100vh - 20rem);
+    padding: 10rem 0;
+}
+.lc-login .login-wrap{
+    width:60%;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .lc-login .login-wrap{
+        width:90%;
+        margin: 0 auto;
+    }
+}
+.lc-login .login-wrap h1 span{
+    display: block;
+    font-size: 1.4rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.lc-login .login-wrap .lc-login-form{
+    width: 45%;
+    margin-top: 2rem;
+}
+@media (max-width: 768px) {
+    .lc-login .login-wrap .lc-login-form{
+        width: 80%;
+        margin-top: 0;
+    }
+}
+.lc-login .login-wrap .lc-login-form .form-group{
+    margin: 4rem 0;
+}
+.lc-login .login-wrap .lc-login-form .form-group input{
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 0;
+}
+.lc-login .login-wrap .lc-login-form .form-group button{
+    display: block;
+    width: 100%;
+    text-indent: 0;
+    border: none;
+    background: #e90500;
+    height: 3.3rem;
+    color: #f6f6f6;
+    font-size: 1.8rem;
+}
+.lc-login .form-tip{
+    font-size: 1.2rem;
+    display: inline-block;
+    min-height: 1.4rem;
+    color: #00be67;
+    margin-bottom: 0;
+}
+/* end login.html */
+/* forgetPwd.html */
+.login-wrap .lc-login-forget{
+    margin-top:9rem;
+}
+/* end forgetPwd.html */
+
+/* 课程页面 */
+/* index.html */
+.ld-course{
+    width: 90%;
+    margin:0 auto;
+    margin-top: 5rem;
+}
+.course-content-wrapper{
+    background: #FFF;
+}
+.course-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:1px solid rgba(0,0,22,.2);
+}
+
+.course-top .course-title-wrapper{
+    padding: 4rem 0;
+}
+.course-top .course-title-wrapper .course-img{
+    width: 8rem;
+    margin: 0 auto;
+}
+.course-top .course-title-wrapper h1{
+    padding: 0;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    margin: 1rem;
+    color: #333;
+}
+/*.course-top .course-title-wrapper .course-img img{
+    height:10rem;
+    width: 10rem;
+}
+.course-top .course-title-wrapper .course-title{
+    display: inline-block;
+}*/
+/* end index.html */
