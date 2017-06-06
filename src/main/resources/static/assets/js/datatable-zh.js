@@ -20,7 +20,7 @@ function loadDefault(){
 	$.extend( $.fn.dataTable.defaults, {
 	    "searching": false,
 	    "bServerSide": true,
-	    "aLengthMenu":[1,10,20,30,40,50],
+	    "aLengthMenu":[10,20,30,40,50],
 	    "iDisplayLength":10,
 	    "ordering": false ,
 	    oLanguage:lang, 
