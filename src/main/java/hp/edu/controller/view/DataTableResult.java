@@ -13,11 +13,11 @@ public class DataTableResult {
 	}
 
 	public Integer getStart() {
+		start = start / length ;  
 		return start;
 	}
 
 	public void setStart(Integer start) {
-		start = 0 == start ? 1 : start;
 		this.start = start;
 	}
 
