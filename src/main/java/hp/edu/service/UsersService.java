@@ -1,10 +1,11 @@
 package hp.edu.service;
 
 import java.util.List;
-import hp.edu.orm.domain.Users;
 
-import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import hp.edu.orm.domain.Users;
 import hp.edu.orm.mapping.UsersMappping; 
 
 @Service
@@ -22,6 +23,8 @@ public class UsersService {
     }
     
     public List<Users> selectAll(){
+    
+    	
    	 return mapping.selectAll() ;
     }
     
