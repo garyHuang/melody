@@ -56,8 +56,8 @@ public interface UsersMappping {
 	})
 	Users selectByPrimaryKey(String id);
 
-	
-	@Results({@Result(column = "id", property = "id", jdbcType = JdbcType.VARCHAR, id = true),
+	@SelectProvider(method = "selectByAny", type = UsersSqlProvider.class)
+	@Results({ @Result(column = "id", property = "id", jdbcType = JdbcType.VARCHAR, id = true),
 			@Result(column = "username", property = "username", jdbcType = JdbcType.VARCHAR),
 			@Result(column = "password", property = "password", jdbcType = JdbcType.VARCHAR),
 			@Result(column = "name", property = "name", jdbcType = JdbcType.VARCHAR),
@@ -70,7 +70,6 @@ public interface UsersMappping {
 			@Result(column = "enabled", property = "enabled", jdbcType = JdbcType.BIT)
 
 	})
-	@SelectProvider(method = "selectByAny" , type = UsersSqlProvider.class)
 	List<Users> selectByAny(Users users);
 
 	@Update({ "update users",

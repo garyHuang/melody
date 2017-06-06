@@ -39,7 +39,7 @@ public class UsersService {
 	}
 
 	public Page<Users> selectByAny(Users users , DataTableResult result) {
-		Page<Users> startPage = PageHelper.startPage(result.getStart(), result.getLength() );
+		Page<Users> startPage = PageHelper.startPage(result.getStart() - 1, result.getLength() );
 		mapping.selectByAny(users);
 		return startPage;
 	}

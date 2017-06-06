@@ -17,6 +17,7 @@ public class DataTableResult {
 	}
 
 	public void setStart(Integer start) {
+		start = 0 == start ? 1 : start;
 		this.start = start;
 	}
 

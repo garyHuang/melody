@@ -8,11 +8,10 @@ public class UsersSqlProvider {
 	
 	public String selectByAny(Users users){
 		 SQL sql = new SQL();
-		 sql.SELECT("id" , "username");
+		 sql.SELECT("id","username","password","name","email","mobile_phone","create_time","remarks","user_type","portrait_url","enabled");
 		 sql.FROM("users");
-		 if(null != users.getId()){
-			 sql.WHERE("id=#{id,jdbcType=VARCHAR}") ;
-		 }
+		 
 		 return sql.toString() ; 
 	}
+	
 }
