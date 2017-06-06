@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 
+import hp.edu.controller.view.DataTableResult;
 import hp.edu.orm.domain.Users;
 import hp.edu.orm.mapping.UsersMappping;
 
@@ -35,5 +36,11 @@ public class UsersService {
 
 	public int updateByPrimaryKey(Users users) {
 		return mapping.updateByPrimaryKey(users);
+	}
+
+	public Page<Users> selectByAny(Users users , DataTableResult result) {
+		Page<Users> startPage = PageHelper.startPage(result.getStart(), result.getLength() );
+		mapping.selectByAny(users);
+		return startPage;
 	}
 }

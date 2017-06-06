@@ -19,8 +19,7 @@ public class UsersController {
 
 	@RequestMapping("list")
 	public DataTableResult list(Users users,DataTableResult result) {
-		
-		Page<Users> pageResult = usersService.selectAll(); 
+		Page<Users> pageResult = usersService.selectByAny(users , result );
 		result.setAaData(pageResult);
 		result.setRecordsFiltered(pageResult.getTotal());
 		result.setRecordsTotal( pageResult.getTotal() );
