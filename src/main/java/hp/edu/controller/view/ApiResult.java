@@ -2,6 +2,8 @@ package hp.edu.controller.view;
 
 import java.util.HashMap;
 
+import hp.edu.Constants;
+
 /**
  * 
  * @author Raindrops at 2017/4/16
@@ -21,7 +23,7 @@ public class ApiResult extends HashMap<String, Object> {
 	}
 	
 	public ApiResult ok(Object data) {
-		this.put("status", 200);
+		this.put("status", Constants.STATE_OK);
 		this.put("data", data);
 		this.put("elapsed", System.currentTimeMillis() - timestamp);
 		return this;
