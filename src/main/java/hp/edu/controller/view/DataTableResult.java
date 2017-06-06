@@ -13,7 +13,7 @@ public class DataTableResult {
 	}
 
 	public Integer getStart() {
-		start = start / length ;  
+		start = start / length + 1 ;  
 		return start;
 	}
 
