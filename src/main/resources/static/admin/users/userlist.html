@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>问题列表</title>
-    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="initial-scale=1.0,minimum-scale=0.5,maximum-scale=1.0">
-    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../assets/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="../../assets/css/homework/question.css" rel="stylesheet">
-    <script src="../../assets/js/jquery-3.2.1.js"></script>
-    <script src="../../assets/js/plugins/jquery.dataTables.min.js"></script>
-    <script src="../../assets/js/plugins/jquery.dataTables.bootstrap.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
-  </head>
-  
-  <body>
-  	<table>
-  		
-  	</table>
-  </body>
+<head>
+<title>问题列表</title>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0,minimum-scale=0.5,maximum-scale=1.0">
+<link rel="stylesheet" href="../../assets/bootstrap3/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../assets/bootstrap3/css/bootstrap-theme.min.css">
+<link type="text/css" rel="stylesheet" href="../../assets/css/dataTables.bootstrap.css" />
+
+<script src="../../assets/bootstrap3/js/jquery-1.11.2.min.js"></script>
+<script src="../../assets/bootstrap3/js/bootstrap.min.js"></script>
+<script src="../../assets/bootstrap3/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/js/dataTables.bootstrap.js"></script>
+
+<script src="userlist.js"></script>
+</head>
+
+<body>
+	<table id="dataTable" class="table table-bordered table-hover" align="center">
+		<thead>
+			<tr class="info">
+				<td><input type="checkbox" id="checkAll"></td>
+				<th>账号</th>
+				<th>姓名</th>
+				<th>邮箱</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+</body>
 </html>
