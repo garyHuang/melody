@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hp.edu.controller.view.ApiResult;
+import com.github.pagehelper.Page;
+
+import hp.edu.controller.view.DataTableResult;
 import hp.edu.orm.domain.Users;
 import hp.edu.service.UsersService;
 
@@ -16,10 +18,12 @@ public class UsersController {
 	protected UsersService usersService;
 
 	@RequestMapping("list")
-	public ApiResult list(Users users) {
-		ApiResult result = ApiResult.prepare() ;
-		result.ok( usersService.selectAll() ) ;
+	public DataTableResult list(Users users,DataTableResult result) {
 		
+		Page<Users> pageResult = usersService.selectAll(); 
+		result.setAaData(pageResult);
+		result.setRecordsFiltered(pageResult.getTotal());
+		result.setRecordsTotal( pageResult.getTotal() );
 		return result;
 	}
 }

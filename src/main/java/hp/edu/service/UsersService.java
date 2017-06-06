@@ -24,7 +24,7 @@ public class UsersService {
 	}
 
 	public Page<Users> selectAll() {
-		Page<Users> startPage = PageHelper.startPage(1, 10);
+		Page<Users> startPage = PageHelper.startPage(1, 1);
 		mapping.selectAll();
 		return startPage;
 	}

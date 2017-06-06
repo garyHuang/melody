@@ -11,12 +11,19 @@
 		<script type="text/javascript" language="javascript" src="../../assets/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" language="javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" language="javascript" src="../../assets/js/dataTables.bootstrap.js"></script>
+		<script type="text/javascript" language="javascript" src="../../assets/js/datatable-zh.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
+				loadDefault();
 				$('#userData').DataTable({
-					
-					ordering:false, 
-					"ajax":"/admin/users/list" , 
+					"ajax":{
+						"type":"POST",
+						"url":"/admin/users/list" , 
+						"data":function(d){
+							d.id = 1 ;
+							d.time = new Date().getTime(); 
+						}
+					} , 
 					"aoColumns":[
 						{
 							"mData" : "id",
@@ -64,10 +71,10 @@
 	</head>
 	<body>
 		<div class="container">
-			
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="userData">
-</table>
-			
+	    <form action="" method="post" > 
+		 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="userData">
+		</table>
+		</form>
 		</div>
 	</body>
 </html>
