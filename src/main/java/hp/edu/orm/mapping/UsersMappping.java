@@ -1,6 +1,8 @@
 package hp.edu.orm.mapping;
 
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
@@ -9,6 +11,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.type.JdbcType;
+
 import hp.edu.orm.domain.Users;
 
 public interface UsersMappping {
@@ -76,4 +79,7 @@ public interface UsersMappping {
 			"set username = #{username,jdbcType=VARCHAR},password = #{password,jdbcType=VARCHAR},name = #{name,jdbcType=VARCHAR},email = #{email,jdbcType=VARCHAR},mobile_phone = #{mobilePhone,jdbcType=VARCHAR},create_time = #{createTime,jdbcType=TIMESTAMP},remarks = #{remarks,jdbcType=VARCHAR},user_type = #{userType,jdbcType=CHAR},portrait_url = #{portraitUrl,jdbcType=VARCHAR},enabled = #{enabled,jdbcType=BIT}",
 			"where id = #{id,jdbcType=VARCHAR}" })
 	int updateByPrimaryKey(Users users);
+	
+	@SelectProvider(method = "selectMaps", type = UsersSqlProvider.class)
+	List<Map<String,Object>> selectMaps(Users users);
 }

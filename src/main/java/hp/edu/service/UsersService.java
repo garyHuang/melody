@@ -1,5 +1,7 @@
 package hp.edu.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,5 +44,13 @@ public class UsersService {
 		Page<Users> startPage = PageHelper.startPage(result.getStart(), result.getLength() );
 		mapping.selectByAny(users);
 		return startPage;
+	}
+	
+	
+	
+	public Page<Map<String,Object>> selectMaps(Users users , DataTableResult result) {
+		Page<Map<String,Object>> startPage = PageHelper.startPage(result.getStart(), result.getLength() );
+		mapping.selectMaps(users);
+		return startPage; 
 	}
 }
