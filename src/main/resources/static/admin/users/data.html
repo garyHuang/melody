@@ -23,6 +23,7 @@
 						"url":"/admin/users/list" , 
 						"data":function(d){
 							d.username = $.trim($('#username').val()); 
+							d.name = $.trim($('#name').val()); 
 							d.time = new Date().getTime(); 
 						}
 					} , 
@@ -73,9 +74,14 @@
 					<div class="panel-body">
 						<form onsubmit="table.ajax.reload();return false" class="form-horizontal" method="get">
 							<div class="form-group">
-							    <label class="col-sm-2 control-label">用户名：</label>
+							    <label class="col-sm-2 control-label">帐号：</label>
 							    <div class="col-sm-3">
-							     <input type="text" class="form-control" id="username" name=""username"" style="width: 250px">
+							     <input type="text" class="form-control" id="username" name="username" style="width: 250px">
+							    </div>
+							    
+							    <label class="col-sm-2 control-label">姓名：</label>
+							    <div class="col-sm-3">
+							     <input type="text" class="form-control" id="name" name="name" style="width: 250px">
 							    </div>
 							</div>
 							
