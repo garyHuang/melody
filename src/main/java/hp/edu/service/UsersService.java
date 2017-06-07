@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -13,6 +14,7 @@ import hp.edu.orm.domain.Users;
 import hp.edu.orm.mapping.UsersMappping;
 
 @Service
+@Transactional
 public class UsersService {
 
 	@Autowired
