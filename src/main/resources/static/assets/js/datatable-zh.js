@@ -19,6 +19,8 @@ lang = {
 function loadDefault(){
 	$.extend( $.fn.dataTable.defaults, {
 	    "searching": false,
+	    "autoWidth": true, 
+	    "destroy": true, 
 	    "bServerSide": true,
 	    "aLengthMenu":[10,20,30,40,50],
 	    "iDisplayLength":10,
