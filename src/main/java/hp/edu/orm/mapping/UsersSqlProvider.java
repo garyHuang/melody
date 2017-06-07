@@ -14,6 +14,7 @@ public class UsersSqlProvider {
 		 if(null != users.getId()){
 			 sql.AND().WHERE("id=#{id}");
 		 }
+		 
 		 if( StringUtils.isNotBlank(users.getUsername())){
 			 sql.AND().WHERE("username like \"%\"#{username}\"%\"") ;
 		 }
