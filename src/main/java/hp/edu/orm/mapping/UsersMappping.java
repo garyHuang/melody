@@ -80,6 +80,6 @@ public interface UsersMappping {
 			"where id = #{id,jdbcType=VARCHAR}" })
 	int updateByPrimaryKey(Users users);
 	
-	@SelectProvider(method = "selectMaps", type = UsersSqlProvider.class)
+	@SelectProvider(method = "selectByAny", type = UsersSqlProvider.class)
 	List<Map<String,Object>> selectMaps(Users users);
 }
