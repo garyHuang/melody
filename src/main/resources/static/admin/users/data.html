@@ -7,11 +7,13 @@
 
 		<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap-combined.min.css">
 		<link rel="stylesheet" type="text/css" href="../../assets/css/dataTables.bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
 		<script type="text/javascript" language="javascript" src="../../assets/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" language="javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" language="javascript" src="../../assets/js/dataTables.bootstrap.js"></script>
 		<script type="text/javascript" language="javascript" src="../../assets/js/datatable-zh.js"></script>
+		<script type="text/javascript" language="javascript" src="../../assets/js/bootstrap.min.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			$(document).ready(function() {
 				loadDefault();
@@ -20,7 +22,7 @@
 						"type":"POST",
 						"url":"/admin/users/list" , 
 						"data":function(d){
-							d.id = 1 ;
+							d.username = $.trim($('#username').val()); 
 							d.time = new Date().getTime(); 
 						}
 					} , 
@@ -69,12 +71,30 @@
 			} ); 
 		</script>
 	</head>
-	<body>
-		<div class="container">
-	    <form action="" method="post" > 
-		 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="userData">
-		</table>
-		</form>
+	<body> 
+		<div class="row">
+			 <div class="col-md-10">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<form class="form-horizontal" method="post">
+							<div class="form-group">
+							    <label class="col-sm-2 control-label">用户名：</label>
+							    <div class="col-sm-3">
+							     <input type="text" class="form-control" id="username" name=""username"" style="width: 250px">
+							    </div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div>
+		    <form action="" method="post" > 
+			 <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="userData">
+			</table>
+			</form>
 		</div>
 	</body>
 </html>
