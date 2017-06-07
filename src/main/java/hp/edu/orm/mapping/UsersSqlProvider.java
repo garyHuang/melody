@@ -15,11 +15,11 @@ public class UsersSqlProvider {
 			 sql.AND().WHERE("id=#{id}");
 		 }
 		 if( StringUtils.isNotBlank(users.getUsername())){
-			 sql.AND().WHERE("username like '%#{username}%'") ;
+			 sql.AND().WHERE("username like \"%\"#{username}\"%\"") ;
 		 }
 		 if( StringUtils.isNotBlank(users.getName())){
 			 
-			 sql.AND().WHERE("name like '%#{name}%'") ;
+			 sql.AND().WHERE("name like \"%\"#{name}\"%\"") ; 
 		 }
 		 return sql.toString() ; 
 	}
