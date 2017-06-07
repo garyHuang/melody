@@ -14,9 +14,10 @@
 		<script type="text/javascript" language="javascript" src="../../assets/js/datatable-zh.js"></script>
 		<script type="text/javascript" language="javascript" src="../../assets/js/bootstrap.min.js"></script>
 		<script type="text/javascript" charset="utf-8">
+			var table  ;
 			$(document).ready(function() {
 				loadDefault();
-				$('#userData').DataTable({
+				table = $('#userData').DataTable({
 					"ajax":{
 						"type":"POST",
 						"url":"/admin/users/list" , 
@@ -80,6 +81,13 @@
 							    <label class="col-sm-2 control-label">用户名：</label>
 							    <div class="col-sm-3">
 							     <input type="text" class="form-control" id="username" name=""username"" style="width: 250px">
+							    </div>
+							</div>
+							
+							
+							<div class="form-group">
+							    <div class="col-sm-2">
+							     <input type="button" onclick="table.ajax.reload()" class="btn btn-default" value="查询" />
 							    </div>
 							</div>
 						</form>
