@@ -1,6 +1,12 @@
 #!/bin/bash
 
-git add .
-git commit -m "$1"
-git push
+param = $1
 
+if [ -z "$param" ] 
+then
+  param="mydog"
+fi
+
+git add .
+git commit -m "$param"
+git push

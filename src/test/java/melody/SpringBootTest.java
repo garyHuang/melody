@@ -25,7 +25,7 @@ public class SpringBootTest {
 	@Test
 	public void test(){
 		Users users = new Users();
-		users.setId("0d5468b8a9c2441da9ef7e98fbf81cff");
+		users.setUsername("zzz");
 		DataTableResult result = new DataTableResult();
 		usersService.selectInActive(users, result) ;
 		System.out.println( JSON.toJSONString(result));  
