@@ -1,38 +1,46 @@
-package hp.edu.orm.mapping;
+package hp.edu.orm.mapping; 
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.ibatis.jdbc.SQL;
 
 import hp.edu.orm.domain.Users;
 
-public class UsersSqlProvider {
+public class UsersSqlProvider{
 	
-	public String selectByAny(Users users){
-		 SQL sql = new SQL();
-		 sql.SELECT("id","username","password","name","email","mobile_phone","create_time","remarks","user_type","portrait_url","enabled");
-		 sql.FROM("users");
-		 if(null != users.getId()){
-			 sql.AND().WHERE("id=#{id}");
-		 }
-		 
-		 if( StringUtils.isNotBlank(users.getUsername())){
-			 sql.AND().WHERE("username like \"%\"#{username}\"%\"") ;
-		 }
-		 if( StringUtils.isNotBlank(users.getName())){
-			 
-			 sql.AND().WHERE("name like \"%\"#{name}\"%\"") ; 
-		 }
-		 return sql.toString() ; 
+	public String selectInActive(Users obj){
+		SQL sql = new SQL();
+		sql.SELECT( "password" , "user_type" , "create_time" , "mobile_phone" , "name" , "id" , "portrait_url" , "email" , "remarks" , "enabled" , "username"  ); 
+		sql.FROM( "users" );
+		
+				if(StringUtils.isNotBlank(obj.getPassword())){
+					sql.AND().WHERE("password = #{password}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getUserType())){
+					sql.AND().WHERE("user_type = #{userType}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getMobilePhone())){
+					sql.AND().WHERE("mobile_phone = #{mobilePhone}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getName())){
+					sql.AND().WHERE("name = #{name}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getId())){
+					sql.AND().WHERE("id = #{id}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getPortraitUrl())){
+					sql.AND().WHERE("portrait_url = #{portraitUrl}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getEmail())){
+					sql.AND().WHERE("email = #{email}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getRemarks())){
+					sql.AND().WHERE("remarks = #{remarks}") ;
+				}
+				if(StringUtils.isNotBlank(obj.getUsername())){
+					sql.AND().WHERE("username = #{username}") ;
+				}
+		
+		return sql.toString() ;  
 	}
 	
-	
-	public String selectMaps(Users users){
-		 SQL sql = new SQL();
-		 sql.SELECT("id","username","password","name","email","mobile_phone","create_time","remarks","user_type","portrait_url","enabled");
-		 sql.FROM("users");
-		 if(null != users.getId()){
-			 sql.AND().WHERE("id=#{id}");
-		 }
-		 return sql.toString() ; 
-	}
 }

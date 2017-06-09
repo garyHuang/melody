@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.pagehelper.Page;
-
 import hp.edu.controller.view.DataTableResult;
 import hp.edu.orm.domain.Users;
 import hp.edu.service.UsersService;
@@ -19,10 +17,7 @@ public class UsersController {
 
 	@RequestMapping("list")
 	public DataTableResult list(Users users,DataTableResult result) {
-		Page<Users> pageResult = usersService.selectByAny(users , result );
-		result.setAaData(pageResult);
-		result.setRecordsFiltered(pageResult.getTotal());
-		result.setRecordsTotal( pageResult.getTotal() );
+		usersService.selectInActive(users , result );  
 		return result;
 	}
 }
